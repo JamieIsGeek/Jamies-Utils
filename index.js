@@ -11,16 +11,9 @@ const { MessageEmbed } = require("discord.js")
 
 const prefix = process.env.prefix
 
-var http = require('http');
-
 const fs = require('fs');
 const ms = require('ms');
 const color = 0x33a7a9
-
-http.createServer(function(req, res) {
-  res.write("I'm alive");
-  res.end();
-}).listen(8080);
 
 client.commands = new Discord.Collection();
 
@@ -32,7 +25,10 @@ for(const file of commandFiles) {
 }
 
 client.once('ready', () => {
+  console.log("##################################")
   console.log(`${client.user.tag} is ONLINE!`)
+  console.log("Owner: JamieIsGeek#5647")
+  console.log("##################################")
 
   client.user.setActivity(`with Discord.js`, { type: 'PLAYING'})
 })
