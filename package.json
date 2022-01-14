@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "node": "^16.6.1"
+  },
+  "dependencies": {
+    "discord.js": "^13.0.1",
+    "fs": "^0.0.1-security",
+    "ms": "^2.1.3"
+  }
+}
