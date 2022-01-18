@@ -38,7 +38,7 @@ module.exports = {
       message.channel.send( {embeds: [finished]})
     }catch(err){
       message.reply(`<@!338063500616138752> | An error has occured, I have logged it! Error: ${err}`)
-      console.log(err)
+      console.error(err)
     }
   }
 }
