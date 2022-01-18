@@ -11,9 +11,16 @@ const { MessageEmbed } = require("discord.js")
 
 const prefix = process.env.prefix
 
+var http = require('http');
+
 const fs = require('fs');
 const ms = require('ms');
 const color = 0x33a7a9
+
+http.createServer(function(req, res) {
+  res.write("I'm alive");
+  res.end();
+}).listen(8080);
 
 client.commands = new Discord.Collection();
 
@@ -48,7 +55,7 @@ client.on('messageCreate', message => {
   const command = args.shift().toLowerCase();
 
   if(command === 'ping'){
-    client.commands.get('ping').execute(message, args, client);
+    client.commands.get('ping').execute(message, args, client, color);
   } else if (command == 'restart'){
       if(message.author.id != '338063500616138752') return message.reply("No")
 
@@ -70,6 +77,8 @@ client.on('messageCreate', message => {
     client.commands.get('sensitive').execute(message, args)
   } else if (command == 'role'){
     client.commands.get('role').execute(message, args, client, color)
+  } else if (command == 'slowmode' || 'slow'){
+    client.commands.get('slowmode').execute(message, args, color)
   }
 });
 
