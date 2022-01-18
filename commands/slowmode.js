@@ -19,7 +19,7 @@ module.exports = {
     }
 
     if(slowLength > 21600){
-      message.reply("Error: The slowmode length cannot be longer than `6 Hours`")
+      message.reply("Error: The slowmode length cannot be longer than `6 Hours`! (`21600` seconds!)")
       var slowLength = 216000
     }
 
@@ -37,7 +37,6 @@ module.exports = {
       
       message.channel.send( {embeds: [finished]})
     }catch(err){
-      message.reply(`<@!338063500616138752> | An error has occured, I have logged it! Error: ${err}`)
       console.error(err)
     }
   }
