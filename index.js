@@ -83,6 +83,10 @@ client.on('messageCreate', message => {
     client.commands.get('kick').execute(message, args, client, color)
   } else if (command == 'tempban'){
     client.commands.get('tban').execute(message, args, client, color)
+  } else if (command == 'mute'){
+    client.commands.get('mute').execute(message, args, client, color)
+  } else if (command == 'unmute'){
+    client.commands.get('unmute').execute(message, args, client, color)
   }
 });
 
