@@ -15,12 +15,12 @@ var http = require('http');
 
 const fs = require('fs');
 const ms = require('ms');
-const color = 0x33a7a9
+const color = 0x027e84
 
 http.createServer(function(req, res) {
-  res.write("I'm alive");
+  res.write("I'm better than you :D");
   res.end();
-}).listen(8080);
+}).listen(8000);
 
 client.commands = new Discord.Collection();
 
@@ -77,8 +77,12 @@ client.on('messageCreate', message => {
     client.commands.get('sensitive').execute(message, args)
   } else if (command == 'role'){
     client.commands.get('role').execute(message, args, client, color)
-  } else if (command == 'slowmode' || 'slow'){
+  } else if (command == 'slowmode'){
     client.commands.get('slowmode').execute(message, args, color)
+  } else if (command == 'kick'){
+    client.commands.get('kick').execute(message, args, client, color)
+  } else if (command == 'tempban'){
+    client.commands.get('tban').execute(message, args, client, color)
   }
 });
 
