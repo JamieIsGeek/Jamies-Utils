@@ -87,6 +87,8 @@ client.on('messageCreate', message => {
     client.commands.get('mute').execute(message, args, client, color)
   } else if (command == 'unmute'){
     client.commands.get('unmute').execute(message, args, client, color)
+  } else if (command == 'avatar'){
+    client.commands.get('avatar').execute(message, args, color)
   }
 });
 
